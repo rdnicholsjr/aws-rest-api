@@ -1,0 +1,12 @@
+Create blank table:
+
+
+aws dynamodb create-table \
+    --table-name userdb \
+    --attribute-definitions AttributeName=name,AttributeType=S AttributeName=email,AttributeType=S \
+    --key-schema AttributeName=name,KeyType=HASH AttributeName=email,KeyType=RANGE \
+    --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
+    --tags Key=Project,Value=aws-rest-api
+
+==========================================
+==========================================
